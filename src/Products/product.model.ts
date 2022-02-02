@@ -16,11 +16,11 @@ export default class Product {
   setTitle(title: string): void {
     this.title = title;
   }
-  
+
   getDescription(): string {
     return this.description;
   }
-  
+
   setDescription(description: string): void {
     this.description = description;
   }

@@ -38,7 +38,9 @@ export default class ProductsController {
   }
 
   @Delete(':id')
-  deleteProduct(@Param('id') productId: string): { status: number, message: string, payload: { } } {
+  deleteProduct(
+    @Param('id') productId: string
+  ): { status: number, message: string, payload: { id?: string } } {
     return this.productsService.deleteProduct(productId);
   }
 

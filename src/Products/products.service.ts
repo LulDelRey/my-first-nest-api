@@ -37,7 +37,7 @@ export default class ProductsService {
     return { status: 201, message: 'Product added!', payload: { id: productId } }
   }
 
-  updateProduct(productId: string, title: string, description: string, price: number): { status: number, message: string, payload: { product?: Product } } {
+  updateProduct(productId: string, title?: string, description?: string, price?: number): { status: number, message: string, payload: { product?: Product } } {
     const product: Product = this.products.find((elem) => elem.getId() === productId);
     if (!product) {
       return { status: 404, message: 'Product not found!', payload: {} }
@@ -60,6 +60,6 @@ export default class ProductsService {
 
     this.products = this.products.filter((elem) => elem.getId() !== productId);
 
-    return { status: 204, message: 'Product deleted!', payload: {} }
+    return { status: 204, message: 'Product deleted!', payload: { id: productId } }
   }
 }
